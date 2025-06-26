@@ -37,7 +37,8 @@ public class LearningController {
                 learning.getTrainingName(),
                 learning.getLearningHours(),
                 learning.getTrainingCategory(),
-                learning.getCompletionDate().toString()
+                learning.getCompletionDate().toString(),
+                employee != null ? employee.getEmpSkill() : "N/A"
             ));
         }
         return result;
@@ -48,9 +49,11 @@ public class LearningController {
         List<EmployeeLearning> learnings = employeeLearningRepository.findAll();
         List<Employee> employees = employeeRepository.findAll();
         Map<Long, String> empNames = new HashMap<>();
+        Map<Long, String> empSkills = new HashMap<>();
         
         for (Employee emp : employees) {
             empNames.put(emp.getEmpId(), emp.getEmpName());
+            empSkills.put(emp.getEmpId(), emp.getEmpSkill());
         }
         
         List<LearningHoursDto> result = new ArrayList<>();
@@ -61,7 +64,8 @@ public class LearningController {
                 learning.getTrainingName(),
                 learning.getLearningHours(),
                 learning.getTrainingCategory(),
-                learning.getCompletionDate().toString()
+                learning.getCompletionDate().toString(),
+                empSkills.get(learning.getEmpId())
             ));
         }
         return result;

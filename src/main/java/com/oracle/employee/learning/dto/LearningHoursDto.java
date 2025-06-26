@@ -7,16 +7,18 @@ public class LearningHoursDto {
     private Double learningHours;
     private String trainingCategory;
     private String completionDate;
+    private String empSkill;
 
     public LearningHoursDto() {}
 
-    public LearningHoursDto(Long empId, String empName, String trainingName, Double learningHours, String trainingCategory, String completionDate) {
+    public LearningHoursDto(Long empId, String empName, String trainingName, Double learningHours, String trainingCategory, String completionDate, String empSkill) {
         this.empId = empId;
         this.empName = empName;
         this.trainingName = trainingName;
         this.learningHours = learningHours;
         this.trainingCategory = trainingCategory;
         this.completionDate = completionDate;
+        this.empSkill = empSkill;
     }
 
     public Long getEmpId() { return empId; }
@@ -36,4 +38,7 @@ public class LearningHoursDto {
     
     public String getCompletionDate() { return completionDate; }
     public void setCompletionDate(String completionDate) { this.completionDate = completionDate; }
+    
+    public String getEmpSkill() { return empSkill; }
+    public void setEmpSkill(String empSkill) { this.empSkill = empSkill; }
 }

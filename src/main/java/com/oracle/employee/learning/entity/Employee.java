@@ -23,6 +23,9 @@ public class Employee {
     
     @Column(name = "EMP_EXP")
     private Integer empExp;
+    
+    @Column(name = "EMP_SKILL")
+    private String empSkill;
 
     public Long getEmpId() { return empId; }
     public void setEmpId(Long empId) { this.empId = empId; }
@@ -41,4 +44,7 @@ public class Employee {
     
     public Integer getEmpExp() { return empExp; }
     public void setEmpExp(Integer empExp) { this.empExp = empExp; }
+    
+    public String getEmpSkill() { return empSkill; }
+    public void setEmpSkill(String empSkill) { this.empSkill = empSkill; }
 }
